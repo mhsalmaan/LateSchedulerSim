@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "algorithm": "cpp",
+        "thread": "cpp",
+        "iostream": "cpp",
+        "numeric": "cpp",
+        "sstream": "cpp",
+        "limits": "cpp",
+        "memory": "cpp"
+    }
+}
