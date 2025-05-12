@@ -83,6 +83,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    std::cout << "Changed by pawan" << endl;
     std::string input_file = argv[1];
     int num_nodes = std::stoi(argv[2]);
     size_t num_tasks = std::stoi(argv[3]);
