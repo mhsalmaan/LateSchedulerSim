@@ -1,6 +1,5 @@
 #include "task.h"
 #include "utils.h"
-#include <iostream>
 #include <algorithm>
 
 Task::Task(int id, const std::string& data)
@@ -9,14 +8,12 @@ Task::Task(int id, const std::string& data)
 void Task::markStarted() {
     start_time = std::chrono::steady_clock::now();
     in_progress = true;
-    std::cout << "[" << currentTimestamp() << "] Task " << id << " started\n";
 }
 
 void Task::markCompleted() {
     end_time = std::chrono::steady_clock::now();
     completed = true;
     in_progress = false;
-    std::cout << "[" << currentTimestamp() << "] Task " << id << " completed\n";
 }
 
 double Task::getDuration() const {

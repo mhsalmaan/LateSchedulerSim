@@ -3,7 +3,6 @@
 #include "utils.h"
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
 MapReduce::MapReduce(const std::string& file, int num_tasks, std::shared_ptr<Scheduler> scheduler)
     : input_file(file), num_tasks(num_tasks), scheduler(scheduler) {}
@@ -18,7 +17,6 @@ void MapReduce::splitInput() {
         size_t start = i * chunk_size;
         chunks.push_back(content.substr(start, chunk_size));
     }
-    std::cout << "[" << currentTimestamp() << "] Split input into " << chunks.size() << " chunks\n";
 }
 
 void MapReduce::createTasks() {

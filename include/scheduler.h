@@ -16,6 +16,7 @@ struct SchedulerStats {
     size_t speculative_tasks = 0;
     size_t stragglers_detected = 0;
     size_t tasks_completed = 0;
+    double straggler_percentile = 0.2;
     std::map<int, double> task_durations;
 };
 
@@ -37,7 +38,7 @@ public:
     void addTask(std::shared_ptr<Task> task);
     void start();
     void join();
-    SchedulerStats getStats() const;
+    SchedulerStats getStatsRaw(); // Removed const
     void recordCompletion(std::shared_ptr<Task> task, double duration);
 
 private:
